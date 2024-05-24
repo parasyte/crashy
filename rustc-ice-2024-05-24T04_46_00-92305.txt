@@ -1,0 +1,25 @@
+thread 'rustc' panicked at compiler/rustc_codegen_ssa/src/back/link.rs:2700:27:
+index out of bounds: the len is 20 but the index is 20
+stack backtrace:
+   0:        0x1057c938c - std::backtrace::Backtrace::create::h1b06c2114552dca1
+   1:        0x10f0c1ff8 - <alloc[b3d7b17f3254a7e4]::boxed::Box<rustc_driver_impl[d78fc4912d252757]::install_ice_hook::{closure#0}> as core[7a0d7fb87c17620e]::ops::function::Fn<(&dyn for<'a, 'b> core[7a0d7fb87c17620e]::ops::function::Fn<(&'a core[7a0d7fb87c17620e]::panic::panic_info::PanicInfo<'b>,), Output = ()> + core[7a0d7fb87c17620e]::marker::Sync + core[7a0d7fb87c17620e]::marker::Send, &core[7a0d7fb87c17620e]::panic::panic_info::PanicInfo)>>::call
+   2:        0x1057e20ac - std::panicking::rust_panic_with_hook::h7f81e6b48edd822e
+   3:        0x1057e1ac0 - std::panicking::begin_panic_handler::{{closure}}::h61dc216c734bb31b
+   4:        0x1057df6e4 - std::sys_common::backtrace::__rust_end_short_backtrace::h14d37ee99da8f514
+   5:        0x1057e1830 - _rust_begin_unwind
+   6:        0x10583d608 - core::panicking::panic_fmt::h879022f43970f0ca
+   7:        0x10583d768 - core::panicking::panic_bounds_check::habf076b85f30241b
+   8:        0x10ee1defc - rustc_codegen_ssa[6b173b5bf0f2b0be]::back::link::linker_with_args
+   9:        0x10ee14cac - rustc_codegen_ssa[6b173b5bf0f2b0be]::back::link::link_natively
+  10:        0x10ee10e70 - rustc_codegen_ssa[6b173b5bf0f2b0be]::back::link::link_binary
+  11:        0x10ed220e0 - <rustc_codegen_llvm[21fd93a69a5e3bd5]::LlvmCodegenBackend as rustc_codegen_ssa[6b173b5bf0f2b0be]::traits::backend::CodegenBackend>::link
+  12:        0x10f85f0a8 - <rustc_interface[9b74dd81a584a30b]::queries::Linker>::link
+  13:        0x10f0b4ca4 - rustc_span[16eba1eb411798eb]::create_session_globals_then::<core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>, rustc_interface[9b74dd81a584a30b]::util::run_in_thread_with_globals<rustc_interface[9b74dd81a584a30b]::util::run_in_thread_pool_with_globals<rustc_interface[9b74dd81a584a30b]::interface::run_compiler<core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>, rustc_driver_impl[d78fc4912d252757]::run_compiler::{closure#0}>::{closure#1}, core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>>::{closure#0}, core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>>::{closure#0}::{closure#0}::{closure#0}>
+  14:        0x10f0829c8 - std[c992710344e8eb3f]::sys_common::backtrace::__rust_begin_short_backtrace::<rustc_interface[9b74dd81a584a30b]::util::run_in_thread_with_globals<rustc_interface[9b74dd81a584a30b]::util::run_in_thread_pool_with_globals<rustc_interface[9b74dd81a584a30b]::interface::run_compiler<core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>, rustc_driver_impl[d78fc4912d252757]::run_compiler::{closure#0}>::{closure#1}, core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>>::{closure#0}, core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>>::{closure#0}::{closure#0}, core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>>
+  15:        0x10f04e024 - <<std[c992710344e8eb3f]::thread::Builder>::spawn_unchecked_<rustc_interface[9b74dd81a584a30b]::util::run_in_thread_with_globals<rustc_interface[9b74dd81a584a30b]::util::run_in_thread_pool_with_globals<rustc_interface[9b74dd81a584a30b]::interface::run_compiler<core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>, rustc_driver_impl[d78fc4912d252757]::run_compiler::{closure#0}>::{closure#1}, core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>>::{closure#0}, core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>>::{closure#0}::{closure#0}, core[7a0d7fb87c17620e]::result::Result<(), rustc_span[16eba1eb411798eb]::ErrorGuaranteed>>::{closure#2} as core[7a0d7fb87c17620e]::ops::function::FnOnce<()>>::call_once::{shim:vtable#0}
+  16:        0x1057eaa04 - std::sys::pal::unix::thread::Thread::new::thread_start::h020974cd53976785
+  17:        0x195abaf94 - __pthread_joiner_wake
+
+
+rustc version: 1.80.0-nightly (867900499 2024-05-23)
+platform: aarch64-apple-darwin
